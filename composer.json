@@ -1,0 +1,24 @@
+{
+    "name": "hamza-betouar-developer/rest-server",
+    "require": {
+    },
+    "require-dev" : {
+        "phpunit/phpunit": "~3.0"
+    },
+    "authors": [
+        {
+            "name": "Hamza betouar",
+            "email": "betouar.hamza.89@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "HBD\\": "src/HBD"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HBD\\Test\\": "test/HBD"
+        }
+    }
+}
