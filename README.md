@@ -26,3 +26,8 @@ Usage :
         - example : `[POST, PUT] http://localhost:8000/post/7 [request="title=title edited;content=content edited"]`
     - Delete a item by id : [DELETE] "/{table_name}/{id}"
         - example : `[DELETE] http://localhost:8000/post/24`
+
+
+Links:
+======
+Trello : https://trello.com/b/aWRCouWk/hbd-rest-server
