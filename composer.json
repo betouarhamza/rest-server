@@ -1,5 +1,6 @@
 {
     "name": "hamza-betouar-developer/rest-server",
+    "description" : "A PHP REST server provides an API with automatic urls",
     "require": {
         "php": ">=5.5.0",
         "doctrine/dbal": "^2.5",
