@@ -1,3 +1,4 @@
 /config/database.php
 /vendor/
 /.idea/
+/composer.lock
