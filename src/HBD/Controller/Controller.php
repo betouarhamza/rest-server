@@ -29,9 +29,29 @@ class Controller
      * @return array
      */
     public function findAll($table_name){
-        return $this->database->createQueryBuilder()
-            ->select('*')->from($table_name)
-            ->execute()
+        $query = $this->database->createQueryBuilder()
+            ->select('*')->from($table_name)->where('1=1');
+
+        $conditions = $this->request->query->get('conditions', []);
+        foreach ($conditions as $field => $value){
+            $query->andWhere("$field LIKE :$field")->setParameter($field, $value);
+        }
+
+        $order = $this->request->query->get('order', []);
+        foreach ($order as $field => $value){
+            $query->addOrderBy($field, $value);
+        }
+
+        if($offset =  $this->request->query->get('offset', null) ){
+            $query->setFirstResult( $offset );
+        }
+
+        if($limit =  $this->request->query->get('limit', null) ){
+            $query->setMaxResults( $limit );
+        }
+
+
+        return $query->execute()
             ->fetchAll();
     }
 
